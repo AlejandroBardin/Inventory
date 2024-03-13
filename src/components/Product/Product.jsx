@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Proptypes from "prop-types";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
-import { ProductsProvider } from "../../context/ProductosContext";
+import { ProductsProvider } from "../../context/productcontext";
 
 const Productos = () => {
     const { productos } = useContext(ProductsProvider);

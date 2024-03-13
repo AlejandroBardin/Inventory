@@ -1,6 +1,6 @@
 import { Button, Form } from "react-bootstrap";
 import { useContext, useState } from "react";
-import { ProductsProvider } from "../../context/ProductosContext";
+import { ProductsProvider } from "../../context/productcontext";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 import { PropTypes } from "prop-types";

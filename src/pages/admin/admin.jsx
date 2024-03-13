@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap"
-import TablaProductos from "../../components/tablas/TablaProductos"
-import FormProductos from "../../components/formProductos/FormProductos"
-import TablaUsuario from "../../components/tablas/TablaUsuario"
+import TablaProductos from "../"
+import FormProductos from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/tables/ProductTable"
+import TablaUsuario from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/tables/UserTable"
 
 const Admin = () => {
   return (
