@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap"
-import TablaProductos from "../"
-import FormProductos from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/tables/ProductTable"
+import TablaProductos from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/tables/ProductTable"
+import FormProductos from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/formProducts/formproducts"
 import TablaUsuario from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/tables/UserTable"
 
 const Admin = () => {
