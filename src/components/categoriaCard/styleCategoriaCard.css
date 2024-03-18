@@ -1,0 +1,57 @@
+img {
+    width:200%;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    color: #a7a9be;
+}
+
+.contenedor{
+    display: flex;
+    flex-grow: 1;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.card{
+    background-color: white;
+   
+
+}
+
+.card-body{
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    padding: 20px 15px;
+    text-align: justify;
+    border: 1px solid #ccc;
+}
+
+
+.btn{
+    display: block;
+    background-color: #ff8906;
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card-header{
+    height: 200px;
+    width: 100%;
+    object-position: 50% 50%;
+    object-fit: cover;}
+
+
+.card-title{
+     text-align: center;
+     margin: 0;
+}
+
+.card-description{
+    flex-grow: 1;
+}

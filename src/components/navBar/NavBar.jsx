@@ -6,11 +6,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react';
 import { MdMenu } from 'react-icons/md';
+import './styleNavBar.css';
+
 
 export const NavBar = () => {
+
+  
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
+    
+    <Navbar expand="lg" className="bg-body-tertiary" >
+      <Container fluid  > 
         
         
         
@@ -92,10 +98,11 @@ export const NavBar = () => {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-
-            <Button className='ml-2'>Login</Button>
+            />         
+            
+            <Button style={{marginLeft:'3px', position:"center", marginBottom:"8px" }} variant="outline-success">Search</Button>
+            <Button style={{marginLeft:'3px', position:"center", marginBottom:"8px" }} >Admin</Button>
+          
             
           </Form>
         </Navbar.Collapse>
