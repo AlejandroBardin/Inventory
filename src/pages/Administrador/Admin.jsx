@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap"
 import { NavBar } from "../../components/navBar/NavBar"
-import TablaProductos from "../../components/tables/ProductTable"
-import FormProductos from "../../components/formProducts/formproducts"
-import TablaUsuario from "../../components/tables/UserTable"
+import {TablaProductos} from "../../components/tables/ProductTable"
+import {FormProductos} from "../../components/formProducts/formproducts"
+import { UserTable }from "../../components/tables/UserTable"
 
 
 export const Admin = () => {
@@ -13,15 +13,15 @@ export const Admin = () => {
     <Container>
         <Row>
             <Col>
-            <FormProductos />
+            <FormProductos/>
             </Col>
             <Col>
-            <TablaProductos />
+            <TablaProductos/>
             </Col>
         </Row>
         <Row>
           <Col>
-          <TablaUsuario />
+          <UserTable/>
           </Col>
         </Row>
     </Container>

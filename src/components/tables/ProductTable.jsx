@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { ProductsProvider } from "../../context/ProductosContext";
+import  ProductosContext  from "../../context/productcontext";
 import { Button, Table, Modal } from "react-bootstrap";
-import FormProductos from "../formProductos/FormProductos";
+import FormProductos from "../formProducts/formproducts";
 
-const TablaProductos = () => {
+export const TablaProductos = () => {
   
-  const { productos, deleteProducto } = useContext(ProductsProvider);
+  const { productos, deleteProducto } = useContext(ProductosContext);
 
   const [editarProductos, setEditarProductos] = useState(null)
   
@@ -62,4 +62,3 @@ const TablaProductos = () => {
   );
 };
 
-export default TablaProductos;

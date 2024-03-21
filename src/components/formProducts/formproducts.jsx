@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 import { PropTypes } from "prop-types";
 
-const FormProductos = ({ editarProductos, handleClose }) => { 
+export const FormProductos = ({ editarProductos, handleClose }) => { 
   const { addProducto, updateProductos } =    useContext(ProductsProvider); 
 
   const [producto, setProducto] = useState({
@@ -112,5 +112,3 @@ const FormProductos = ({ editarProductos, handleClose }) => {
 FormProductos.propTypes = {
   editarProductos: PropTypes.object,
 };
-
-export default FormProductos;

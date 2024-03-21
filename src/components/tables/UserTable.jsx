@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { FaEdit } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
-
 import { getUsers, delUser } from '../../api/adminUsers';
 import { EditUserModal } from '../modals/EditUserModal';
 import { AddUserModal } from '../modals/AddUserModal';

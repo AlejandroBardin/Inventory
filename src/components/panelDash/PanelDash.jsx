@@ -4,7 +4,7 @@ import { NavbarDash } from '../navbarDash/NavbarDash';
 import { CardDash } from '../cardDash/CardDash';
 
 import { UserTable } from '../tables/UserTable';
-import { ProductTable } from '../tables/ProductTable';
+import { TablaProductos } from '../tables/ProductTable';
 import { CategoryTable } from '../tables/CategoryTable';
 
 export const PanelDash = ({ Toggle }) => {
@@ -57,7 +57,7 @@ export const PanelDash = ({ Toggle }) => {
 				);
 			case 'products':
 				// Lógica para la tabla de productos
-				return <ProductTable />;
+				return <TablaProductos />;
 			case 'categories':
 				// Lógica para la tabla de categorías
 				return <CategoryTable />;
@@ -85,7 +85,7 @@ export const PanelDash = ({ Toggle }) => {
 				</div>
 				{/* 
 			{selectedTable == 'users' && <UserTable users={users} setUsers={setUsers} />}
-			{selectedTable === 'products' && <ProductTable />}
+			{selectedTable === 'products' && <TablaProductos />}
 			{selectedTable === 'categories' && <CategoryTable />} */}
 				{renderTable()}
 			</div>
