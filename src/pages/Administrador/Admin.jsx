@@ -5,7 +5,7 @@ import FormProductos from "../../components/formProducts/formproducts"
 import TablaUsuario from "../../components/tables/UserTable"
 
 
-const Admin = () => {
+export const Admin = () => {
   return (
     <>
     <div><NavBar /></div> 
@@ -25,7 +25,6 @@ const Admin = () => {
           </Col>
         </Row>
     </Container>
-
 
 
 </>
