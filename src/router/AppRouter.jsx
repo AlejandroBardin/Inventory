@@ -23,6 +23,7 @@ export const AppRouter = () => {
         <Route path="/" element={<Categorias categoria="Proteina"/>} />
         <Route path="/personaje/:heroId" element={<CategoriaPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/Admin" element=
 
 
         {/*
@@ -31,7 +32,7 @@ export const AppRouter = () => {
         <Route path="/dashboard" element={<Dashboard />} />
 				<Route path="/dashboard" element={<Dashboard />} /> */}
                 
-			</Routes>
+        </Routes>
 		</BrowserRouter>
   )
 }

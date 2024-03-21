@@ -1,11 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap"
-import TablaProductos from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/tables/ProductTable"
-import FormProductos from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/formProducts/formproducts"
-import TablaUsuario from "/Users/fsanc/Desktop/rolling_final_frontend/src/components/tables/UserTable"
+import { NavBar } from "../../components/navBar/NavBar"
+import TablaProductos from "../../components/tables/ProductTable"
+import FormProductos from "../../components/formProducts/formproducts"
+import TablaUsuario from "../../components/tables/UserTable"
+
 
 const Admin = () => {
   return (
     <>
+    <div><NavBar /></div> 
     <h2>Administrador</h2>
     <Container>
         <Row>

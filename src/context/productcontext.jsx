@@ -9,7 +9,7 @@ const ProductosContext = ({ children }) => {
     const[productos, setProductos] = useState([]);
     
     
-     // Funcion para obtener los datos de la API GET
+     
     const obtenerDatos = async () => {
         try {
           const response = await axios.get('http://localhost:8000/productos');
@@ -19,19 +19,19 @@ const ProductosContext = ({ children }) => {
         }
       };
 
-    const addProducto = async (producto) =>{ /*creamos la funcion de guardar productos*/
+    const addProducto = async (producto) =>{
     console.log(producto)
     try {
-        const response = await axios.post('http://localhost:8000/productos', producto); /*agrega los productos en la base de datos*/
+        const response = await axios.post('http://localhost:8000/productos', producto);
         
-        setProductos([...productos, response.data]); /*actualizamos nuestros productos trayendo productos y enviandolos a response.data*/
+        setProductos([...productos, response.data]); 
         
       } catch (error) {
         console.log(error)
       }
     }
 
-     const deleteProducto = async (id) =>{ /*funcion para eliminar producto*/
+     const deleteProducto = async (id) =>{
       try {
         await axios.delete(`http://localhost:8000/productos/${id}`);
 
@@ -44,9 +44,9 @@ const ProductosContext = ({ children }) => {
 
      const updateProductos = async (producto) =>{
       try {
-        await axios.put(`http://localhost:8000/productos/${producto.id}`, producto); /*actualiza los datos a la API*/
+        await axios.put(`http://localhost:8000/productos/${producto.id}`, producto); 
         
-        await obtenerDatos(); /*los trae otra vez */
+        await obtenerDatos(); 
 
       } catch (error) {
         
@@ -60,7 +60,7 @@ const ProductosContext = ({ children }) => {
 
 
 
-  return ( /*disponivilizamos funciones para que los children puedan captar*/
+  return ( 
    <ProductsProvider.Provider value={{ productos, addProducto, deleteProducto, updateProductos }}> 
         {children}
     </ProductsProvider.Provider>
