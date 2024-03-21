@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import  ProductosContext  from "../../context/productcontext";
+import  { ProductosContext }  from "../../context/productcontext";
 import { Button, Table, Modal } from "react-bootstrap";
-import FormProductos from "../formProducts/formproducts";
+import { FormProductos } from "../formProducts/formproducts";
 
 export const TablaProductos = () => {
   

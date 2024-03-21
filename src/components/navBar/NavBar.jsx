@@ -101,7 +101,7 @@ export const NavBar = () => {
             />         
             
             <Button style={{marginLeft:'3px', position:"center", marginBottom:"8px" }} variant="outline-success">Search</Button>
-            <Button style={{marginLeft:'3px', position:"center", marginBottom:"8px" }} >Admin</Button>
+            <Button style={{marginLeft:'3px', position:"center", marginBottom:"8px" }} href="/Admin">  Admin</Button>
           
             
           </Form>
