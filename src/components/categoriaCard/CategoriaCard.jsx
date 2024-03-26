@@ -17,14 +17,14 @@ export const CategoriaCard = ({hero}) => {
             <Card.Img src={hero.imagen} style={{ objectFit:"cover", height:"15rem", objectPosition: "center", }}/>
              </div>
       <Card.Body class="card-body">
-        <Card.Title>{hero.producto}</Card.Title>
+        <Card.Title>{hero.name}</Card.Title>
         <Card.Text >
 
           <p >Cantidad: {hero.cantidad}</p> 
           <p>Precio: {hero.precio}</p> 
 
         </Card.Text>
-        <Link className='btn btn-success' to={`/personaje/${hero.id}`}>Ver Mas</Link>
+        <Link className='btn btn-success' to={`/personaje/${hero._id}`}>Ver Mas</Link>
       </Card.Body>
     </Card>
         </div>
