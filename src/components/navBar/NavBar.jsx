@@ -9,13 +9,21 @@ import { MdMenu } from 'react-icons/md';
 import './styleNavBar.css';
 
 
-export const NavBar = () => {
+
+
+  export const NavBar = ({ searchFilter, setSearchFilter }) => {
+    const handleSearchChange = (event) => {
+      setSearchFilter(event.target.value);
+    };
+  
+
+  
 
   
 
   return (
     
-    <Navbar expand="lg" className="bg-body-tertiary" >
+    <Navbar  className="bg-body-tertiary" >
       <Container fluid  > 
         
         
@@ -96,13 +104,16 @@ export const NavBar = () => {
             <Form.Control
               type="search"
               placeholder="Search"
+              value={searchFilter}
+              onChange={handleSearchChange}  
               className="me-2"
               aria-label="Search"
             />         
             
             <Button style={{marginLeft:'3px', position:"center", marginBottom:"8px" }} variant="outline-success">Search</Button>
-            <Button style={{marginLeft:'3px', position:"center", marginBottom:"8px" }} href="/Admin">  Admin</Button>
+            <Button style={{marginLeft:'3px', position:"center", marginBottom:"8px" }} href="/Login">  Admin</Button>
           
+            
             
           </Form>
         </Navbar.Collapse>

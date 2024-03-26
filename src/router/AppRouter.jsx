@@ -4,6 +4,8 @@ import { Dashboard } from '../pages/dashboard/Dashboard';
 import { Categorias } from '../pages/categorias/Categorias';
 import { CategoriaPage } from '../components/categoriaPage/CategoriaPage';
 import { Admin } from "../pages/Administrador/Admin"
+import { LoginForm } from '../pages/LoginForm/LoginForm'; 
+import { RegistroForm } from '../pages/RegistroForm/RegistroForm';
 
 
 
@@ -20,10 +22,14 @@ export const AppRouter = () => {
         <Routes>
 					
       
-        <Route path="/" element={<Categorias categoria="Proteina"/>} />
+        <Route path="/" element={<Categorias categoria="proteina"/>} />
         <Route path="/personaje/:heroId" element={<CategoriaPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/Admin" element={<Admin/>} />
+        <Route path="/login" element={<LoginForm/>} />
+        <Route path="/registro" element={<RegistroForm/>} />
+        
+
 
 
   
