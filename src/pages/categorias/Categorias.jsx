@@ -4,8 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 import { CategoriaCard } from '../../components/categoriaCard/CategoriaCard';
 import './styleCategorias.css';
 import api from '../../api/api';
-import { LoginForm } from '../LoginForm/LoginForm';
-//import { heroes } from '../../data/heroesData';
+
 
 
 

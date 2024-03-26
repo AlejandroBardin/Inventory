@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { PropTypes } from "prop-types";
 
 export const FormProductos = ({ editarProductos, handleClose }) => { 
+
   const { addProducto, updateProductos } =    useContext(ProductsProvider); 
 
   const [producto, setProducto] = useState({
