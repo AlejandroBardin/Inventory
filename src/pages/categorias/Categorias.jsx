@@ -1,70 +1,57 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavBar } from '../../components/navBar/NavBar'
-import { heroes } from '../../data/heroesData';
-import {Row, Col} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { CategoriaCard } from '../../components/categoriaCard/CategoriaCard';
 import './styleCategorias.css';
+import api from '../../api/api';
+import { LoginForm } from '../LoginForm/LoginForm';
+//import { heroes } from '../../data/heroesData';
 
 
 
 
+export const Categorias = ({ categoria }) => {
+    const [searchFilter, setSearchFilter] = useState('');
+    const [data, setData] = useState([]);
 
-
-export const Categorias = ({categoria}) => {
-
-    
-    
-    const mostrarCategoria = heroes.filter( hero => hero.categoria === categoria);
-   
-
-    
-
-    
-
-  return (
-    <div className='body'>
-
-    <div><NavBar /></div> 
-
-    <div className='container'>
-            <Row xs={1} md={2} lg={4}>
-            {
-                mostrarCategoria.map((hero) => {
-                    return(
-
-                        <Col key={hero.id}>
-
-                            <CategoriaCard hero={hero}/>
-                        
-                        
-                        </Col>
-
-                    )
-                })
+     useEffect (  () => {
+        const fetchData = async () => {
+            try {
+                const res = await api.get("/api/productos");
+                setData(res.data);
+               
+                
+            } catch (error) {
+                console.error("Error fetching data:", error);
             }
+        };
 
-            </Row>
+       
+         fetchData();
+         console.log(data)
 
-
-    </div>
-    
-    
-    
-   
-    </div>
-    )
-    }
-    
-  
-    
-   
-
-
-   
-    
+         
+    }, []);
 
     
-   
-   
+    const mostrarCategoria = data.filter(hero => hero.categoria === categoria);
 
-
+    return (
+        <div className='body'>
+            <div><NavBar searchFilter={searchFilter} setSearchFilter={setSearchFilter} /></div>
+            <div className='container'>
+                <Row xs={1} md={2} lg={4}>
+                    {
+                        mostrarCategoria.map((hero) => {
+                            return (
+                                <Col key={hero.id}>
+                                    <CategoriaCard hero={hero} />
+                                </Col>
+                            );
+                        })
+                    }
+                </Row>
+            </div>
+        </div>
+    );
+};
