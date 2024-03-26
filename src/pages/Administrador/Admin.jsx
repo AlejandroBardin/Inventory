@@ -8,8 +8,7 @@ import { UserTable }from "../../components/tables/UserTable"
 export const Admin = () => {
   return (
     <>
-    <div><NavBar /></div> 
-    <h2>Administrador</h2>
+    <NavBar/> 
     <Container>
         <Row>
             <Col>
