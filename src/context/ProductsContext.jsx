@@ -1,18 +1,18 @@
 import { createContext, useEffect, useState } from "react"
-import axios from "axios";
+import api from "../api/api"
 
 
  export const ProductsProvider = createContext();
 
 
-export const ProductosContext = ({ children }) => {
+export const ProductsContext = ({ children }) => {
     const[productos, setProductos] = useState([]);
     
     
      
     const obtenerDatos = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/productos');
+          const response = await api.get('/api/productos');
           setProductos(response.data);
         } catch (error) {
           console.error(error);
@@ -22,7 +22,7 @@ export const ProductosContext = ({ children }) => {
     const addProducto = async (producto) =>{
     console.log(producto)
     try {
-        const response = await axios.post('http://localhost:3000/productos', producto);
+        const response = await api.post('/api/productos', producto);
         
         setProductos([...productos, response.data]); 
         
@@ -33,7 +33,7 @@ export const ProductosContext = ({ children }) => {
 
      const deleteProducto = async (id) =>{
       try {
-        await axios.delete(`http://localhost:3000/productos/${id}`);
+        await api.delete(`/api/productos/${id}`);
 
         setProductos(productos.filter((producto) => producto.id !== id)); 
         
@@ -44,7 +44,7 @@ export const ProductosContext = ({ children }) => {
 
      const updateProductos = async (producto) =>{
       try {
-        await axios.put(`http://localhost:3000/productos/${producto.id}`, producto); 
+        await api.put(`/api/productos/${producto.id}`, producto); 
         
         await obtenerDatos(); 
 

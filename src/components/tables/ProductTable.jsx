@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
-import  { ProductosContext }  from "../../context/productcontext";
+import { ProductsProvider } from "../../context/ProductsContext";
 import { Button, Table, Modal } from "react-bootstrap";
-import { FormProductos } from "../formProducts/FormProducts";
+import { FormsProductos } from "../formProducts/FormsProducts";
 
 
 
 export const TablaProductos = () => {
   
-  const { productos, deleteProducto } = useContext(ProductosContext);
+  const { productos, deleteProducto } = useContext(ProductsProvider);
 
   const [editarProductos, setEditarProductos] = useState(null)
   
@@ -55,7 +55,7 @@ export const TablaProductos = () => {
         <Modal.Header closeButton>
           <Modal.Title>Formulario de Edicion</Modal.Title>
         </Modal.Header>
-        <Modal.Body> <FormProductos editarProductos={editarProductos} handleClose= {handleClose} /> </Modal.Body> 
+        <Modal.Body> <FormsProductos editarProductos={editarProductos} handleClose= {handleClose} /> </Modal.Body> 
         
       </Modal>
         </>           

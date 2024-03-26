@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap"
 import { NavBar } from "../../components/navBar/NavBar"
 import {TablaProductos} from "../../components/tables/ProductTable"
-import { FormProductos } from "../../components/formProducts/FormProducts"
+import { FormsProductos } from "../../components/formProducts/FormsProducts"
 import { UserTable }from "../../components/tables/UserTable"
 
 
@@ -12,7 +12,7 @@ export const Admin = () => {
     <Container>
         <Row>
             <Col>
-            <FormProductos/>
+            <FormsProductos/>
             </Col>
             <Col>
             <TablaProductos/>

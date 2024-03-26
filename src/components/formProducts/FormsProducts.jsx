@@ -1,11 +1,11 @@
 import { Button, Form } from "react-bootstrap";
 import { useContext, useState } from "react";
-import { ProductsProvider } from "../../context/productcontext";
+import { ProductsProvider } from "../../context/ProductsContext";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 import { PropTypes } from "prop-types";
 
-export const FormProductos = ({ editarProductos, handleClose }) => { 
+export const FormsProductos = ({ editarProductos, handleClose }) => { 
 
   const { addProducto, updateProductos } =    useContext(ProductsProvider); 
 
@@ -110,6 +110,6 @@ export const FormProductos = ({ editarProductos, handleClose }) => {
   );
 };
 
-FormProductos.propTypes = {
+FormsProductos.propTypes = {
   editarProductos: PropTypes.object,
 };
