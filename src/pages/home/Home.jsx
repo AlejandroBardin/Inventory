@@ -34,7 +34,7 @@ export const Home = ({ categoria }) => {
     return (
         <div className='body'>
             <NavBar searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
-            <div className='container'>
+            <div className='container main-wrapper'>
                 <Row xs={1} md={2} lg={4}>
                     {resultadosFiltrados.map(hero => (
                         <Col key={hero.id}>
