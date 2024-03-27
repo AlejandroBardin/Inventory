@@ -20,18 +20,20 @@ export const NavBar = ({ searchFilter, setSearchFilter }) => {
   };
 
   return (
-    <Navbar className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container fluid>
         <Navbar.Brand href="#">Nombre</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-            <Nav.Link href="#action1">Inicio</Nav.Link>
+          <Nav className="me-auto flex-grow-1 my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+            <Nav.Link >
+            <Link to="/" >Inicio</Link>
+              </Nav.Link>
             <NavDropdown title="Suplementos" id="navbarScrollingDropdown">
               <NavDropdown.Item>
-              <Link to="/categorias/proteina" onClick={() => handleCategoriaSelect('proteina')}>
+                <Link to="/categorias/proteina" onClick={() => handleCategoriaSelect('proteina')}>
                   Proteina
-              </Link>
+                </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>

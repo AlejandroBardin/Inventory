@@ -4,11 +4,11 @@ html, body {
 }
 
 body {
-  margin: 0; /* Asegura que no haya margen externo */
-  padding: 0; /* Asegura que no haya relleno interno */
+  margin: 0; 
+  padding: 0; 
  min-height: 100vh;
   
-  background-color: #0f0e17; /* Color de fondo deseado */
+  background-color: #0f0e17;
 }
 
 .main-wrapper {
