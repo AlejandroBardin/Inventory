@@ -1,44 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { heroes } from '../../data/heroesData';
 import { NavBar } from '../navBar/NavBar';
-
-
-
-
+import api from '../../api/api';
 
 export const CategoriaPage = () => {
+    const { heroId } = useParams();
+    const [hero, setHero] = useState(null);
 
-    const {heroId} = useParams()
-    const hero = heroes.find(h => heroId === h.id )
-   
-    
-    
+    useEffect(() => {
+        const fetchHero = async () => {
+            try {
+                const res = await api.get(`/api/productos/${heroId}`);
+                setHero(res.data);
+            } catch (error) {
+                console.error("Error fetching hero:", error);
+            }
+        };
 
+        fetchHero();
+    }, [heroId]);
 
-    
-        
-        
-
-  return (
-
+    return (
         <>
-
-        <div><NavBar /></div> 
-
-        <div className='d-flex align-item-center m-3'>
-        <div>
-
-
-            <img src={hero.imagen} alt={hero.producto}/>
-
-        </div>
-        
-        </div>
-        
-        
-        </> 
-   
-    
-  )
-}
+            <NavBar />
+            <div className='d-flex align-item-center m-3'>
+                <div>
+                    {hero ? (
+                        <>
+                            <img src={hero.imagen} alt={hero.producto} />
+                            <p>{hero.name}</p>
+                            <p>Cantidad: {hero.cantidad}</p>
+                            <p>Precio: {hero.precio}</p>
+                        </>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+};

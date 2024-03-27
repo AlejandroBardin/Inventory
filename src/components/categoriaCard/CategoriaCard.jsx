@@ -9,14 +9,14 @@ export const CategoriaCard = ({hero}) => {
     
   return (
 
-    <div class="contenedor">
-         <div class="card">
+    <div className="contenedor">
+         <div className="card">
     <Card>
       
-            <div class="card-header">
+            <div className="card-header">
             <Card.Img src={hero.imagen} style={{ objectFit:"cover", height:"15rem", objectPosition: "center", }}/>
              </div>
-      <Card.Body class="card-body">
+      <Card.Body className="card-body">
         <Card.Title>{hero.name}</Card.Title>
         <Card.Text >
 
