@@ -4,11 +4,6 @@ import api from "../api/api"
 
 
 
-
-
-
-
-
  export const ProductsProvider = createContext();
 
 
@@ -29,7 +24,12 @@ export const ProductsContext = ({ children }) => {
     const addProducto = async (producto) =>{
    
       const token = localStorage.getItem("token");
+      const { name, precio, descripcion, categoria, imagen } = productos;
 
+      if (!name || !precio || !descripcion || !categoria || !imagen) {
+          setError('Por favor, complete todos los campos.');
+          return;
+      }
     try {
         const response = await api.post('/api/productos', producto, {
           headers: {

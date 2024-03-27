@@ -43,7 +43,7 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
         timer: 1500,
       });
       setProducto({
-       // id: uuidv4(),
+      
        name: "",
        precio: "",
        cantidad: "",
@@ -63,7 +63,7 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
     });
 
     setProducto({
-      //id: uuidv4(),
+   
       name: "",
       precio: "",
       cantidad: "",

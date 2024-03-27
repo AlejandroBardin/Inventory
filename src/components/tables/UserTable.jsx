@@ -59,7 +59,7 @@ export const UserTable = ({ users, setUsers }) => {
 				</thead>
 				<tbody>
 					{users
-						/* .filter((user) => user.rol !== 'admin') */
+						
 						.map((user, index) => (
 							<tr key={index}>
 								<th scope="row">{index + 1}</th>
