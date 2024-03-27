@@ -56,3 +56,10 @@ h1 {
 .card-description{
     flex-grow: 1;
 }
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap; /* Para que las tarjetas se envuelvan en dispositivos pequeños */
+    justify-content: center; /* Para centrar las tarjetas horizontalmente */
+    margin: 20px auto; /* Margen automático arriba y abajo, centrando las tarjetas horizontalmente */
+}

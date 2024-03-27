@@ -1,0 +1,92 @@
+
+
+:root {
+    background-color: #0f0e17; 
+    --primer-color: #997A74;
+    --segundo-color: #A37C86;
+    --tercer-color: #BB72BC;
+    --cuarto-color: #2C51BB;
+    --quinto-color: #787499;
+    --sexto-color: #F6F6F6;
+}
+
+
+.container-QS {
+    background-color: #0f0e17;
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección del flujo a columna */
+    justify-content: flex-start; /* Alinear el contenido al principio */
+    align-items: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+    padding: 2rem;
+}
+
+.title-QS {
+    text-align: center;
+    color: var(--sexto-color);
+    font-size: 3rem;
+    margin: 2rem;
+    order: 1; /* Cambiar el orden del título para que esté arriba */
+}
+
+.cards-QS {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    order: 2; /* Cambiar el orden de las tarjetas para que estén debajo del título */
+}
+
+.card-QS {
+    width: 18rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--sexto-color);
+    margin: 2rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    transition: transform .2s;
+}
+
+
+.card-QS:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0.5rem 1rem var(--quinto-color);
+}
+
+.card-QS h2 {
+    font-size: 1.6rem;
+    margin: 1rem;
+}
+.image-QS{
+    display: flex;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 20%;   
+    margin: 0 auto;
+    box-shadow: 0 0.3rem 0.5rem var(--sexto-color);
+    object-fit: cover;
+}
+
+.icon-QS{
+    color: var(--sexto-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    transition: transform .2s; 
+}
+
+.icon-QS:hover{
+    transform: scale(1.1);
+}
+
+body {
+    margin: 0; /* Eliminar el margen predeterminado del cuerpo */
+}

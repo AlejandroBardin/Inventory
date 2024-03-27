@@ -7,6 +7,9 @@ import { LoginForm } from '../pages/LoginForm/LoginForm';
 import { RegistroForm } from '../pages/RegistroForm/RegistroForm';
 import { Home } from '../pages/home/Home';
 import { Categorias } from '../pages/categorias/Categorias'; // Importa Categorias aquí
+import QuienesSomos from '../pages/nosotros/Nosotros';
+
+
 
 export const AppRouter = () => {
   return (
@@ -19,6 +22,8 @@ export const AppRouter = () => {
         <Route path="/admin" element={<Admin />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/registro" element={<RegistroForm />} />
+        <Route path="/nosotros" element={<QuienesSomos />} />
+        
       </Routes>
     </BrowserRouter>
   );
