@@ -16,7 +16,7 @@ export const PanelDash = ({ Toggle }) => {
 
 	const handleCardClick = (tableName) => {
 		setSelectedTable(tableName);
-		/* 		console.log(tableName); */
+		
 		setCurrentPage(1);
 	};
 
