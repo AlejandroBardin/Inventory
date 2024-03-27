@@ -4,6 +4,10 @@ import { Row, Col } from 'react-bootstrap';
 import { CategoriaCard } from '../../components/categoriaCard/CategoriaCard';
 import './styleHome.css';
 import api from '../../api/api';
+import Footer from '../../components/footer/Footer';
+
+
+
 
 export const Home = ({ categoria }) => {
     const [searchFilter, setSearchFilter] = useState('');
@@ -22,6 +26,8 @@ export const Home = ({ categoria }) => {
         fetchData();
     }, []);
 
+
+
     let mostrarCategoria = data;
     if (categoria) {
         mostrarCategoria = data.filter(hero => hero.categoria === categoria);
@@ -32,7 +38,7 @@ export const Home = ({ categoria }) => {
     );
 
     return (
-        <div className='body'>
+        <div className='prex'>
             <NavBar searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
             <div className='container main-wrapper'>
                 <Row xs={1} md={2} lg={4}>
@@ -43,6 +49,10 @@ export const Home = ({ categoria }) => {
                     ))}
                 </Row>
             </div>
+            
+            
+            <Footer />
+
         </div>
     );
 };

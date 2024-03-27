@@ -29,6 +29,10 @@ export const RegistroForm = () => {
 
     
   return (
+           
+    <div className='pre'>
+           
+           
            <div className='wrapper'>
         
             <h1>Crear Usuario</h1>
@@ -70,8 +74,12 @@ export const RegistroForm = () => {
 
             <div className="register-link">
             <p>Ya tienes una cuenta? <Link to='/Login'>Iniciar sesión</Link></p>
+            <p> <Link to='/'>Volver al Home</Link></p>
             </div>
+            
         </form>
+    </div>
+
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { CategoriaCard } from '../../components/categoriaCard/CategoriaCard';
 import './styleCategorias.css';
 import api from '../../api/api';
 import { useParams } from 'react-router-dom';
+import Footer from '../../components/footer/Footer';
 
 export const Categorias = () => {
     const [searchFilter, setSearchFilter] = useState('');
@@ -38,6 +39,7 @@ export const Categorias = () => {
                     ))}
                 </Row>
             </div>
+            <Footer />
         </div>
     );
 };

@@ -22,7 +22,7 @@ export const NavBar = ({ searchFilter, setSearchFilter }) => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Nombre</Navbar.Brand>
+        <Navbar.Brand href="/">Inventory</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto flex-grow-1 my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
@@ -63,10 +63,10 @@ export const NavBar = ({ searchFilter, setSearchFilter }) => {
             </NavDropdown>
 
             <Nav.Link >
-            <Link to="/" >Quienes somos</Link>
+            <Link to="/nosotros" >Quienes somos</Link>
             </Nav.Link>
             <Nav.Link >
-            <Link to="/" >Contacto</Link>
+            <Link to="/error" >Contacto</Link>
             </Nav.Link>
           </Nav>
           <Form className="d-flex" fluid>

@@ -90,3 +90,20 @@
 body {
     margin: 0; /* Eliminar el margen predeterminado del cuerpo */
 }
+
+.btn-back-to-home {
+    /* Estilos del botón "Volver al Home" */
+    margin-top: 20px; /* Espacio entre el contenido y el botón */
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #BB72BC; /* Color de fondo */
+    color: #F6F6F6; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back-to-home:hover {
+    background-color: #A37C86; /* Cambia el color de fondo al pasar el cursor */
+}

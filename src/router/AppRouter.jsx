@@ -8,13 +8,16 @@ import { RegistroForm } from '../pages/RegistroForm/RegistroForm';
 import { Home } from '../pages/home/Home';
 import { Categorias } from '../pages/categorias/Categorias'; // Importa Categorias aquí
 import QuienesSomos from '../pages/nosotros/Nosotros';
-
+import {Error404} from '../pages/Error404/Error404'
 
 
 export const AppRouter = () => {
   return (
+    
     <BrowserRouter>
       <Routes>
+
+        
         <Route path="/" element={<Home />} />
         <Route path="/categorias/:categoria" element={<Categorias />} /> 
         <Route path="/personaje/:heroId" element={<CategoriaPage />} />
@@ -23,6 +26,7 @@ export const AppRouter = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/registro" element={<RegistroForm />} />
         <Route path="/nosotros" element={<QuienesSomos />} />
+        <Route path="/error" element={<Error404/>} />
         
       </Routes>
     </BrowserRouter>

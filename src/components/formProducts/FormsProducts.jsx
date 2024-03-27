@@ -19,6 +19,8 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
     imagen: editarProductos ? editarProductos.imagen : "",
   });
 
+  const [isEditing, setIsEditing] = useState(editarProductos !== null);
+
   const handleChange = (e) => {
     
     setProducto({
