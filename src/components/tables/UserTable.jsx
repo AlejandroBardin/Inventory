@@ -13,6 +13,7 @@ export const UserTable = ({ users, setUsers }) => {
 
 	useEffect(() => {
 		const fetchUsers = async () => {
+			
 			try {
 				const fetchedUsers = await getUsers();
 				setUsers(fetchedUsers);
@@ -21,7 +22,7 @@ export const UserTable = ({ users, setUsers }) => {
 			}
 		};
 		fetchUsers();
-	}, [users]);
+	}, []);
 
 	const openEditModal = (user) => {
 		setSelectedUser(user);

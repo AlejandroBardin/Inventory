@@ -2,6 +2,13 @@ import { createContext, useEffect, useState } from "react"
 import api from "../api/api"
 
 
+
+
+
+
+
+
+
  export const ProductsProvider = createContext();
 
 
@@ -20,9 +27,15 @@ export const ProductsContext = ({ children }) => {
       };
 
     const addProducto = async (producto) =>{
-    console.log(producto)
+   
+      const token = localStorage.getItem("token");
+
     try {
-        const response = await api.post('/api/productos', producto);
+        const response = await api.post('/api/productos', producto, {
+          headers: {
+            'x-token': token,
+          },
+        });
         
         setProductos([...productos, response.data]); 
         
@@ -32,10 +45,18 @@ export const ProductsContext = ({ children }) => {
     }
 
      const deleteProducto = async (id) =>{
-      try {
-        await api.delete(`/api/productos/${id}`);
 
-        setProductos(productos.filter((producto) => producto.id !== id)); 
+      const token = localStorage.getItem("token");
+      
+      try {
+        await api.delete(`/api/productos/${id}`, 
+        {
+          headers: {
+            'x-token': token,
+          },
+        });
+
+        setProductos(productos.filter((producto) => producto._id !== id)); 
         
       } catch (error) {
         console.log(error)
@@ -43,12 +64,26 @@ export const ProductsContext = ({ children }) => {
      };
 
      const updateProductos = async (producto) =>{
-      try {
-        await api.put(`/api/productos/${producto.id}`, producto); 
-        
-        await obtenerDatos(); 
 
-      } catch (error) {
+      const token = localStorage.getItem("token");
+      
+      try {   
+
+        await api.put(`/api/productos/${producto.id}`, producto,
+        {
+          headers: {
+            'x-token': token,
+          },
+        }
+        
+        ); 
+        
+         obtenerDatos(); 
+
+      }
+      
+      catch (error) {
+        console.log(error);
         
       }
      }

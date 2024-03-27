@@ -11,7 +11,7 @@ export const CategoriaPage = () => {
 
     const {heroId} = useParams()
     const hero = heroes.find(h => heroId === h.id )
-    console.log(hero)
+   
     
     
 

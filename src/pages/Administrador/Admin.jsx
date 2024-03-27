@@ -3,24 +3,30 @@ import { NavBar } from "../../components/navBar/NavBar"
 import {TablaProductos} from "../../components/tables/ProductTable"
 import { FormsProductos } from "../../components/formProducts/FormsProducts"
 import { UserTable }from "../../components/tables/UserTable"
+import { useState } from "react"
+
+
+
 
 
 export const Admin = () => {
+  const [users, setUsers] = useState([]);
   return (
     <>
-    <NavBar/> 
+    <div><NavBar /></div> 
+    <h2>Administrador</h2>
     <Container>
         <Row>
             <Col>
             <FormsProductos/>
             </Col>
             <Col>
-            <TablaProductos/>
+            <TablaProductos />
             </Col>
         </Row>
         <Row>
           <Col>
-          <UserTable/>
+          <UserTable users={users} setUsers={setUsers}/>
           </Col>
         </Row>
     </Container>

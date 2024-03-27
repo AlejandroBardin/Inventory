@@ -38,13 +38,13 @@ export const TablaProductos = () => {
             <tbody>
               {productos.map((producto) => (
                
-                  <tr key={producto.id}>
-                    <td>{producto.id}</td>
-                    <td>{producto.nombre}</td>
+                  <tr key={producto._id}>
+                    <td>{producto._id}</td>
+                    <td>{producto.name}</td>
                     <td>{producto.precio}</td>
                     <td>
                       <Button variant="warning" onClick={() => handleEdit(producto)}>Editar</Button>
-                      <Button variant="danger" onClick={() => deleteProducto(producto.id)}>Eliminar</Button>
+                      <Button variant="danger" onClick={() => deleteProducto(producto._id)}>Eliminar</Button>
                     </td>
                   </tr>
                 
