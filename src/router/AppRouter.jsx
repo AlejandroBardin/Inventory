@@ -11,6 +11,8 @@ import QuienesSomos from '../pages/nosotros/Nosotros';
 
 
 
+
+
 export const AppRouter = () => {
   return (
     
@@ -26,6 +28,7 @@ export const AppRouter = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/registro" element={<RegistroForm />} />
         <Route path="/nosotros" element={<QuienesSomos />} />
+        
         
         
       </Routes>
