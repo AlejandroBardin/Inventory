@@ -83,7 +83,7 @@ export const NavBar = ({ searchFilter, setSearchFilter }) => {
             <Link to={`/categorias/${categoriaSeleccionada}`} style={{ textDecoration: 'none' }}>
             {/* <Button style={{ marginLeft: '3px', position: "center", marginBottom: "8px" }} variant="outline-success " disabled>Search</Button> */}
             </Link>
-            <Button style={{ marginLeft: '3px', position: "center", marginBottom: "8px" }} href="/login">Admin</Button>
+            <Link to="/login" className="btn btn-primary" style={{ marginLeft: '3px', position: "center", marginBottom: "8px", textDecoration: 'none' }}>Admin</Link>
           </Form>
         </Navbar.Collapse>
       </Container>

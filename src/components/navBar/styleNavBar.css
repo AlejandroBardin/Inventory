@@ -8,3 +8,11 @@
   color: inherit; /* Mantener el color del texto original */
   text-decoration: none; /* Quitar el subrayado */
 }
+
+
+.btn btn-primary{
+
+  background-color: blue;
+color: white;
+border-color: #000000;
+}
