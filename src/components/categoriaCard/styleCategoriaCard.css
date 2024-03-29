@@ -17,19 +17,16 @@ h1 {
 }
 
 .card{
-    background-color: white;
-   
-
-}
+    background-color: transparent; /* Cambia el fondo a transparente */
+  }
 
 .card-body{
     border-radius: 0 0 10px 10px;
-    background-color: #fff;
+    background-color: #fff; /* Puedes eliminar este fondo si no lo necesitas */
     padding: 20px 15px;
     text-align: justify;
     border: 1px solid #ccc;
-}
-
+  }
 
 .btn{
     display: block;

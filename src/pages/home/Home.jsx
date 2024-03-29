@@ -49,10 +49,7 @@ export const Home = ({ categoria }) => {
                     ))}
                 </Row>
             </div>
-            
-            
             <Footer />
-
         </div>
     );
 };

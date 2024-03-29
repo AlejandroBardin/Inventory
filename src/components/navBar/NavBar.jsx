@@ -16,8 +16,10 @@ export const NavBar = ({ searchFilter, setSearchFilter }) => {
   };
 
   const handleSearchChange = (event) => {
-    setSearchFilter(event.target.value);
+    setSearchFilter(event.target.value); // Utiliza la función que actualiza el estado del filtro
   };
+
+  
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">

@@ -59,6 +59,7 @@ const QuienesSomos = () => {
                 <Link to="/" className="btn-back-to-home">Volver al Home</Link>
             
         </div>
+        
     );
 };
 
