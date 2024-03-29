@@ -1,3 +1,6 @@
+:root {
+  background-color: #0f0e17; }
+
 html, body {
   height: 100vh;
   background-color: #0f0e17;
@@ -11,6 +14,19 @@ body {
   background-color: #0f0e17;
 }
 
+
+
+.prex {
+  display: flex;
+  background-color: #0f0e17;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .main-wrapper {
-    height: 100vh;
+  flex-grow: 1; /* Permite que el contenido principal crezca */
+}
+
+.footer {
+  margin-top: auto; /* El footer se colocará al final del contenedor principal */
 }

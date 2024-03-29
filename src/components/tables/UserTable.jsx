@@ -12,7 +12,6 @@ export const UserTable = ({ users, setUsers }) => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            
             try {
                 const fetchedUsers = await getUsers();
                 setUsers(fetchedUsers);
@@ -46,7 +45,6 @@ export const UserTable = ({ users, setUsers }) => {
                 {modalVisible && <AddUserModal closeModal={() => setModalVisible(false)} />}
             </div>
             <div style={{ maxHeight: "400px", overflowY: "auto" }}>
-                {/* Contenedor con estilos CSS */}
                 <table className="table caption-top bg-white rounded mt-2">
                     <thead>
                         <tr>
@@ -67,18 +65,22 @@ export const UserTable = ({ users, setUsers }) => {
                                 <td>{user.email}</td>
                                 <td>{user.rol}</td>
                                 <td>
-                                    <button
-                                        className="btn btn-success mx-1"
-                                        onClick={() => openEditModal(user)}
-                                    >
-                                        <FaEdit size={20} />
-                                    </button>
-                                    <button
-                                        className="btn btn-danger mx-1"
-                                        onClick={() => delUser(user._id)}
-                                    >
-                                        <MdDelete size={20} />
-                                    </button>
+                                    {user.rol !== 'admin' && ( // Mostrar los botones solo si el rol no es 'admin'
+                                        <>
+                                            <button
+                                                className="btn btn-success mx-1"
+                                                onClick={() => openEditModal(user)}
+                                            >
+                                                <FaEdit size={20} />
+                                            </button>
+                                            <button
+                                                className="btn btn-danger mx-1"
+                                                onClick={() => delUser(user._id)}
+                                            >
+                                                <MdDelete size={20} />
+                                            </button>
+                                        </>
+                                    )}
                                 </td>
                             </tr>
                         ))}

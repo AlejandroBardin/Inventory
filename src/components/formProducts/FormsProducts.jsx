@@ -19,6 +19,8 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
     imagen: editarProductos ? editarProductos.imagen : "",
   });
 
+  const [isEditing, setIsEditing] = useState(editarProductos !== null);
+
   const handleChange = (e) => {
     
     setProducto({
@@ -93,12 +95,17 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
           <Form.Group className="mb-3">
           <Form.Label>Categoria</Form.Label>
           <Form.Control
-            type="text"
+            as="select"
             value={producto.categoria}
             onChange={handleChange} 
             name="categoria"
-            placeholder="Categoria del producto"
-          />
+          >
+            <option value="">Seleccionar categoría</option>
+            <option value="proteina">Proteína</option>
+            <option value="creatina">Creatina</option>
+            <option value="bcaa">BCAA</option>
+            <option value="preentreno">Preentreno</option>
+          </Form.Control>
           </Form.Group>
 
         <Form.Group className="mb-3">

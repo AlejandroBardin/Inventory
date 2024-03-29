@@ -1,4 +1,5 @@
 .admin-page-wrapper {
     background-color: transparent; /* Establece el fondo transparente */
     overflow: hidden; /* Evita que se genere un desplazamiento vertical */
+    
 }

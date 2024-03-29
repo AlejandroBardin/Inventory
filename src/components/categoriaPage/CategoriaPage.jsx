@@ -21,7 +21,7 @@ export const CategoriaPage = () => {
     }, [heroId]);
 
     return (
-        <>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
             <NavBar />
             <div className='d-flex align-item-center m-3'>
                 <div>
@@ -37,6 +37,6 @@ export const CategoriaPage = () => {
                     )}
                 </div>
             </div>
-        </>
+        </div>
     );
 };

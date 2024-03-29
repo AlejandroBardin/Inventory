@@ -16,13 +16,15 @@ export const NavBar = ({ searchFilter, setSearchFilter }) => {
   };
 
   const handleSearchChange = (event) => {
-    setSearchFilter(event.target.value);
+    setSearchFilter(event.target.value); // Utiliza la función que actualiza el estado del filtro
   };
+
+  
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Nombre</Navbar.Brand>
+        <Navbar.Brand href="/">Inventory</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto flex-grow-1 my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
@@ -54,13 +56,20 @@ export const NavBar = ({ searchFilter, setSearchFilter }) => {
               </NavDropdown.Item>
 
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+              <NavDropdown.Item href="#action5"></NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Accesorios Deportivos" id="navbarScrollingDropdown">
-              <NavDropdown.Item onClick={() => handleCategoriaSelect('accesorios-deportivos')}>Accesorios Deportivos</NavDropdown.Item>
+            <NavDropdown title="Accesorios Deportivos" id="navbarScrollingDropdown" disabled>
+              <NavDropdown.Item onClick={() => handleCategoriaSelect('accesorios-deportivos') } disabled>Accesorios Deportivos</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
             </NavDropdown>
+
+            <Nav.Link >
+            <Link to="/nosotros" >Quienes somos</Link>
+            </Nav.Link>
+            <Nav.Link >
+            <Link to="/error" >Contacto</Link>
+            </Nav.Link>
           </Nav>
           <Form className="d-flex" fluid>
             <Form.Control
@@ -72,7 +81,7 @@ export const NavBar = ({ searchFilter, setSearchFilter }) => {
               aria-label="Search"
             />
             <Link to={`/categorias/${categoriaSeleccionada}`} style={{ textDecoration: 'none' }}>
-              <Button style={{ marginLeft: '3px', position: "center", marginBottom: "8px" }} variant="outline-success">Search</Button>
+            {/* <Button style={{ marginLeft: '3px', position: "center", marginBottom: "8px" }} variant="outline-success " disabled>Search</Button> */}
             </Link>
             <Button style={{ marginLeft: '3px', position: "center", marginBottom: "8px" }} href="/login">Admin</Button>
           </Form>

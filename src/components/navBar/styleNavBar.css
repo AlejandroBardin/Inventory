@@ -1,3 +1,10 @@
 .Nav{
     background-color: #a7a9be;
 }
+.navbar a,
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active {
+  color: inherit; /* Mantener el color del texto original */
+  text-decoration: none; /* Quitar el subrayado */
+}
