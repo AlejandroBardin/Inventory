@@ -9,6 +9,9 @@ import Footer from '../../components/footer/Footer';
 
 
 
+
+
+
 export const Home = ({ categoria }) => {
     const [searchFilter, setSearchFilter] = useState('');
     const [data, setData] = useState([]);
@@ -39,8 +42,12 @@ export const Home = ({ categoria }) => {
 
     return (
         <div className='prex'>
+            
             <NavBar searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
             <div className='container main-wrapper'>
+
+            
+
                 <Row xs={1} md={2} lg={4}>
                     {resultadosFiltrados.map(hero => (
                         <Col key={hero.id}>
