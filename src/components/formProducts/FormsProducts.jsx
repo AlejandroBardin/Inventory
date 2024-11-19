@@ -18,8 +18,6 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
     imagen: editarProductos ? editarProductos.imagen : "",
   });
 
-  const [isEditing] = useState(editarProductos !== null);
-
   const handleChange = (e) => {
     setProducto({
       ...producto,
@@ -27,51 +25,34 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
     });
   };
 
-  const validateForm = () => {
-    const { name, precio, cantidad, descripcion, categoria, imagen } = producto;
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    if (!name || !precio || !cantidad || !descripcion || !categoria || !imagen) {
-      Swal.fire({
-        icon: "error",
-        title: "Todos los campos son obligatorios",
-        text: "Por favor, completa todos los campos antes de continuar.",
-      });
-      return false;
-    }
-
-    if (Number(cantidad) < 0) {
+    if (Number(producto.cantidad) < 0) {
       Swal.fire({
         icon: "error",
         title: "Cantidad inválida",
         text: "La cantidad no puede ser negativa.",
       });
-      return false;
+      return;
     }
 
-    if (Number(precio) < 0) {
+    if (Number(producto.precio) < 0) {
       Swal.fire({
         icon: "error",
         title: "Precio inválido",
         text: "El precio no puede ser negativo.",
       });
-      return false;
+      return;
     }
 
-    return true;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) return;
-
-    if (isEditing) {
+    if (editarProductos) {
       updateProductos(producto);
       handleClose();
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Producto editado con éxito",
+        title: "Producto editado",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -80,7 +61,7 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Producto agregado con éxito",
+        title: "Producto agregado",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -100,8 +81,7 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit} className="form-container">
-        <h2>{isEditing ? "Editar Producto" : "Agregar Producto"}</h2>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Nombre</Form.Label>
           <Form.Control
@@ -169,13 +149,13 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
             value={producto.imagen}
             onChange={handleChange}
             name="imagen"
-            placeholder="URL de la imagen del producto"
+            placeholder="Imagen del producto"
           />
         </Form.Group>
 
-        {isEditing ? (
+        {editarProductos ? (
           <Button type="submit" variant="warning">
-            Agregar Producto
+            Editar Producto
           </Button>
         ) : (
           <Button type="submit" variant="success">
@@ -189,4 +169,5 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
 
 FormsProductos.propTypes = {
   editarProductos: PropTypes.object,
+  handleClose: PropTypes.func.isRequired,
 };

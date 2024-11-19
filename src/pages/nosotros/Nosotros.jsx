@@ -23,11 +23,11 @@ const data = [
     },
     {
         id: 3,
-        name: "",
+        name: "Felipe Gutierrez",
         linkedin: "",
         github: "",
-        instagram: "",
-        image: "public/img/nosotros/cris.jpeg",
+        instagram: "https://www.instagram.com/felipegutierrezo0797/",
+        image: "public/img/nosotros/cris.png",
     },
 ];
 

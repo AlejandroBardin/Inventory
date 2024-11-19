@@ -133,17 +133,17 @@ export const TablaProductos = () => {
                         </Table>
                     </div>
                     <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Editar Producto</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <FormsProductos
-                                editarProductos={editarProductos}
-                                handleClose={handleClose}
-                                handleUpdate={handleUpdate}
-                            />
-                        </Modal.Body>
-                    </Modal>
+  <Modal.Header closeButton>
+    <Modal.Title>{editarProductos ? "Editar Producto" : "Agregar Producto"}</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <FormsProductos
+      editarProductos={editarProductos} // Pasamos el producto a editar si existe
+      handleClose={handleClose}
+    />
+  </Modal.Body>
+</Modal>
+
                 </>
             )}
         </>
