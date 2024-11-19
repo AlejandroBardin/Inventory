@@ -55,13 +55,12 @@ const QuienesSomos = () => {
                     </div>
                 ))}
             </div>
-            {/* Agregar el botón para volver al home */}
-            
-                <Link to="/" className="btn-back-to-home">Volver al Home</Link>
-            
+            {/* Botón siempre centrado debajo de las cards */}
+            <Link to="/" className="btn-back-to-home">Volver al Home</Link>
         </div>
-        
     );
 };
 
+
+           
 export default QuienesSomos;
