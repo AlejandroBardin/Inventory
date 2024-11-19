@@ -21,6 +21,7 @@ export const UserTable = ({ users, setUsers }) => {
     };
     fetchUsers();
   }, [setUsers]);
+  
 
   const openEditModal = (user) => {
     setSelectedUser(user);
