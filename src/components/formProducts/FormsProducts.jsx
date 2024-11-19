@@ -28,7 +28,20 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (Number(producto.cantidad) < 0) {
+    // Validación de campos obligatorios
+    const { name, precio, cantidad, descripcion, categoria } = producto;
+
+    if (!name || !precio || !cantidad || !descripcion || !categoria) {
+      Swal.fire({
+        icon: "error",
+        title: "Todos los campos son obligatorios",
+        text: "Por favor, completa todos los campos antes de continuar.",
+      });
+      return;
+    }
+
+    // Validación de valores negativos
+    if (Number(cantidad) < 0) {
       Swal.fire({
         icon: "error",
         title: "Cantidad inválida",
@@ -37,7 +50,7 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
       return;
     }
 
-    if (Number(producto.precio) < 0) {
+    if (Number(precio) < 0) {
       Swal.fire({
         icon: "error",
         title: "Precio inválido",
@@ -46,6 +59,7 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
       return;
     }
 
+    // Agregar o editar producto
     if (editarProductos) {
       updateProductos(producto);
       handleClose();
@@ -143,7 +157,7 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Imagen</Form.Label>
+          <Form.Label>Imagen (Opcional)</Form.Label>
           <Form.Control
             type="text"
             value={producto.imagen}

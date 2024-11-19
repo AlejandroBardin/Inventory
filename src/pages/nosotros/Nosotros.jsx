@@ -11,7 +11,7 @@ const data = [
         linkedin: "https://www.linkedin.com/in/ale-bardin/",
         github: "https://github.com/AlejandroBardin",
         instagram: "https://www.instagram.com/alejandro.bardin/",
-        image: "public/img/nosotros/alebardin.jpeg",
+        image: "/img/nosotros/alebardin.jpeg", // Sin 'public'
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const data = [
         linkedin: "",
         github: "",
         instagram: "https://www.instagram.com/fran_sanchez.96/",
-        image: "public/img/nosotros/fran.png",
+        image: "/img/nosotros/fran.png", // Sin 'public'
     },
     {
         id: 3,
@@ -27,9 +27,10 @@ const data = [
         linkedin: "",
         github: "",
         instagram: "https://www.instagram.com/felipegutierrezo0797/",
-        image: "public/img/nosotros/cris.png",
+        image: "/img/nosotros/cris.png", // Sin 'public'
     },
 ];
+
 
 const QuienesSomos = () => {
     return (

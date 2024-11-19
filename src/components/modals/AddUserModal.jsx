@@ -8,7 +8,7 @@ export const AddUserModal = ({ closeModal }) => {
     firstName: "",
     lastName: "",
     email: "",
-    rol: "user", // Valor por defecto
+    rol: "user",
     password: "",
     confirmPassword: "",
   });
@@ -78,7 +78,7 @@ export const AddUserModal = ({ closeModal }) => {
       Swal.fire({
         icon: "error",
         title: "Error al agregar usuario",
-        text: "Inténtalo nuevamente.",
+        text: error.message || "Inténtalo nuevamente.",
       });
     }
   };
