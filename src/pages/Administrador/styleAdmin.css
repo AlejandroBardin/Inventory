@@ -1,5 +1,119 @@
 .admin-page-wrapper {
-    background-color: transparent; /* Establece el fondo transparente */
-    overflow: hidden; /* Evita que se genere un desplazamiento vertical */
-    
+  background-color: #0f0e17; /* Color de fondo uniforme */
+  min-height: 100vh; /* Altura total de la pantalla */
+  padding-bottom: 20px; /* Espaciado inferior */
+}
+
+/* General */
+.form-container,
+.table-container {
+  background-color: #1a1a2e; /* Fondo uniforme */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+  color: #fff; /* Texto claro */
+}
+
+.form-container h2,
+.section-title {
+  color: #f5f5f5; /* Texto claro */
+  text-align: center;
+  font-size: 1.5rem; /* Tamaño estándar */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Espaciado de letras */
+}
+
+/* Inputs y Labels */
+.form-label {
+  color: #d1d1e9;
+  font-weight: bold;
+}
+
+.form-control {
+  background-color: #0f0e17;
+  color: #fff;
+  border: 1px solid #4caf50;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  background-color: #151515;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px #4caf50;
+}
+
+/* Botones */
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-success {
+  background-color: #4caf50;
+}
+
+.btn-warning {
+  background-color: #ffa726;
+}
+
+.btn-danger {
+  background-color: #ff5252;
+}
+
+.btn:hover {
+  opacity: 0.9; /* Efecto al pasar el mouse */
+}
+
+/* Tabla */
+.table {
+  color: #fff;
+  background-color: #0f0e17;
+  border: 1px solid #4caf50;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table thead th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #151515; /* Alternar filas */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #1e1e2f; /* Alternar filas */
+}
+
+/* Acciones en la tabla */
+.table-actions .btn {
+  font-size: 0.9rem;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Alineación general */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+h2.text-center {
+  color: #f5f5f5;
+  font-size: 3rem;
+  margin-top: 50px;
 }
