@@ -8,7 +8,7 @@ const data = [
     {
         id: 1,
         name: "Alejandro Bardin",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/ale-bardin/",
         github: "https://github.com/AlejandroBardin",
         instagram: "https://www.instagram.com/alejandro.bardin/",
         image: "public/img/nosotros/alebardin.jpeg",
@@ -23,11 +23,11 @@ const data = [
     },
     {
         id: 3,
-        name: "Cristian Diez Del Valle",
-        linkedin: "https://www.linkedin.com/in/cristian-diez-del-valle-569376271/",
-        github: "https://github.com/CristianDiezDelValle",
-        instagram: "https://www.instagram.com/cristiandiezdelvalle/",
-        image: "public/img/nosotros/cris.jpeg",
+        name: "Felipe Gutierrez",
+        linkedin: "",
+        github: "",
+        instagram: "https://www.instagram.com/felipegutierrezo0797/",
+        image: "public/img/nosotros/cris.png",
     },
 ];
 

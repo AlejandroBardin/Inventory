@@ -5,9 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 import { PropTypes } from "prop-types";
 
-export const FormsProductos = ({ editarProductos, handleClose }) => { 
-
-  const { addProducto, updateProductos } =    useContext(ProductsProvider); 
+export const FormsProductos = ({ editarProductos, handleClose }) => {
+  const { addProducto, updateProductos } = useContext(ProductsProvider);
 
   const [producto, setProducto] = useState({
     id: editarProductos ? editarProductos._id : uuidv4(),
@@ -19,22 +18,35 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
     imagen: editarProductos ? editarProductos.imagen : "",
   });
 
-  const [isEditing, setIsEditing] = useState(editarProductos !== null);
-
   const handleChange = (e) => {
-    
     setProducto({
-      ...producto ,
-      [e.target.name]:
-        e.target.value ,
+      ...producto,
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("agregando productos");
 
-    if(editarProductos){
+    if (Number(producto.cantidad) < 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Cantidad inválida",
+        text: "La cantidad no puede ser negativa.",
+      });
+      return;
+    }
+
+    if (Number(producto.precio) < 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Precio inválido",
+        text: "El precio no puede ser negativo.",
+      });
+      return;
+    }
+
+    if (editarProductos) {
       updateProductos(producto);
       handleClose();
       Swal.fire({
@@ -44,41 +56,30 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
         showConfirmButton: false,
         timer: 1500,
       });
-      setProducto({
-       // id: uuidv4(),
-       name: "",
-       precio: "",
-       cantidad: "",
-       descripcion: "",
-       categoria:"",
-       imagen: "",
-      });
     } else {
-      
-    addProducto(producto);
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Producto agregado",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+      addProducto(producto);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Producto agregado",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
 
+    // Reiniciar el formulario
     setProducto({
-      //id: uuidv4(),
+      id: uuidv4(),
       name: "",
       precio: "",
       cantidad: "",
       descripcion: "",
-      categoria:"",
+      categoria: "",
       imagen: "",
     });
   };
-    }
-   
 
   return (
-    
     <>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
@@ -86,18 +87,18 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
           <Form.Control
             type="text"
             value={producto.name}
-            onChange={handleChange} 
+            onChange={handleChange}
             name="name"
             placeholder="Nombre del producto"
           />
-          </Form.Group>
+        </Form.Group>
 
-          <Form.Group className="mb-3">
-          <Form.Label>Categoria</Form.Label>
+        <Form.Group className="mb-3">
+          <Form.Label>Categoría</Form.Label>
           <Form.Control
             as="select"
             value={producto.categoria}
-            onChange={handleChange} 
+            onChange={handleChange}
             name="categoria"
           >
             <option value="">Seleccionar categoría</option>
@@ -106,32 +107,30 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
             <option value="bcaa">BCAA</option>
             <option value="preentreno">Preentreno</option>
           </Form.Control>
-          </Form.Group>
+        </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Cantidad</Form.Label>
           <Form.Control
             type="number"
             value={producto.cantidad}
-            onChange={handleChange} 
+            onChange={handleChange}
             name="cantidad"
             placeholder="Cantidad del producto"
           />
-          </Form.Group>
+        </Form.Group>
 
-            <Form.Group className="mb-3">
-          <Form.Label>Descripcion</Form.Label>
+        <Form.Group className="mb-3">
+          <Form.Label>Descripción</Form.Label>
           <Form.Control
             type="text"
             value={producto.descripcion}
-            onChange={handleChange} 
+            onChange={handleChange}
             name="descripcion"
-            placeholder="descripcion del producto"
+            placeholder="Descripción del producto"
           />
-
-
-
         </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>Precio</Form.Label>
           <Form.Control
@@ -142,6 +141,7 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
             placeholder="Precio del producto"
           />
         </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>Imagen</Form.Label>
           <Form.Control
@@ -152,12 +152,16 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
             placeholder="Imagen del producto"
           />
         </Form.Group>
+
         {editarProductos ? (
-          <Button type="submit" variant="warning"> Editar Producto </Button>
+          <Button type="submit" variant="warning">
+            Editar Producto
+          </Button>
         ) : (
-          <Button type="submit" variant="success"> Agregar Producto </Button>
+          <Button type="submit" variant="success">
+            Agregar Producto
+          </Button>
         )}
-        
       </Form>
     </>
   );
@@ -165,4 +169,5 @@ export const FormsProductos = ({ editarProductos, handleClose }) => {
 
 FormsProductos.propTypes = {
   editarProductos: PropTypes.object,
+  handleClose: PropTypes.func.isRequired,
 };

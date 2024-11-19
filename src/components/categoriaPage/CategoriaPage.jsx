@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { NavBar } from '../navBar/NavBar';
 import api from '../../api/api';
+import './styleCategoriaPage.css';
 
 export const CategoriaPage = () => {
     const { heroId } = useParams();
@@ -20,21 +21,31 @@ export const CategoriaPage = () => {
         fetchHero();
     }, [heroId]);
 
+    if (!hero) {
+        return (
+            <div className="loading-container">
+                <p>Cargando detalles del producto...</p>
+            </div>
+        );
+    }
+
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <div className="categoria-page">
             <NavBar />
-            <div className='d-flex align-item-center m-3'>
-                <div>
-                    {hero ? (
-                        <>
-                            <img src={hero.imagen} alt={hero.producto} />
-                            <p>{hero.name}</p>
-                            <p>Cantidad: {hero.cantidad}</p>
-                            <p>Precio: {hero.precio}</p>
-                        </>
-                    ) : (
-                        <p>Loading...</p>
-                    )}
+            <div className="product-detail-container">
+                <div className="product-card">
+                    <div className="product-image">
+                        <img src={hero.imagen} alt={hero.producto} />
+                    </div>
+                    <div className="product-info">
+                        <h1 className="product-name">{hero.name}</h1>
+                        <p className="product-quantity">
+                            <strong>Cantidad disponible:</strong> {hero.cantidad}
+                        </p>
+                        <p className="product-price">
+                            <strong>Precio:</strong> ${hero.precio}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

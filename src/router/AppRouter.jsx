@@ -6,8 +6,12 @@ import { Admin } from "../pages/Administrador/Admin"
 import { LoginForm } from '../pages/LoginForm/LoginForm'; 
 import { RegistroForm } from '../pages/RegistroForm/RegistroForm';
 import { Home } from '../pages/home/Home';
-import { Categorias } from '../pages/categorias/Categorias'; // Importa Categorias aquí
-import QuienesSomos from '../pages/nosotros/Nosotros';
+import { Categorias } from '../pages/categorias/Categorias'; 
+import Error404 from '../components/error404/Error404';
+import  QuienesSomos  from '../pages/nosotros/Nosotros';
+
+
+
 
 
 
@@ -28,6 +32,8 @@ export const AppRouter = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/registro" element={<RegistroForm />} />
         <Route path="/nosotros" element={<QuienesSomos />} />
+        <Route path="/error" element={<Error404 />} />
+       
         
         
         
